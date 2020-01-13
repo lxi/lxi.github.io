@@ -1,37 +1,9 @@
-## Welcome to GitHub Pages
+# 欢迎阅读
 
-You can use the [editor on GitHub](https://github.com/lxi/lxi.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### CentOS7、Nginx、Python、Django项目环境搭建
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[链接]([http://localhost:8080/?data=http://qn.thinkingtouch.com/md/CentOS7%E3%80%81Nginx%E3%80%81Python%E3%80%81Django%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md](http://localhost:8080/?data=http://qn.thinkingtouch.com/md/CentOS7、Nginx、Python、Django项目环境搭建.md))
 
-### Markdown
+我的个人服务器所使用的的环境搭建。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lxi/lxi.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+****
