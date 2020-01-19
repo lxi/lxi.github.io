@@ -2,3 +2,8 @@ title: 思维触觉
 description: 个人主页，展示个人文档.
 show_downloads: false
 google_analytics:
+
+gems: [jekyll-mermaid]
+
+mermaid:
+  src: 'path/to/mermaid.js'
