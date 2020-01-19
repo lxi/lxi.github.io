@@ -2,6 +2,23 @@
 layout: default
 ---
 
+```mermaid
+graph TD
+
+	subgraph Web server
+	B(Nginx)
+	C[uWSGI]
+	D[Django项目]
+	end
+	subgraph 客户机
+	A[浏览器]
+	end
+	A---B
+	B---C
+	C---D
+	
+```
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
