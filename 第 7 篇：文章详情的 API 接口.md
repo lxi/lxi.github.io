@@ -125,4 +125,4 @@ class PostDetailViewSet(viewsets.GenericViewSet):
 
 现在，再次访问单篇文章 API 接口，可以看到返回了更加详细的博客文章数据了：
 
-![img](C:\Users\64206\Desktop\django-rest-framework\img\7\2.jpg)
+![img](.\img\7\2.jpg)

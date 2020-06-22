@@ -91,7 +91,7 @@ urlpatterns = [
 
 这里我们用到了 django-rest-framework 的 Router，它能帮我们自动注册视图函数到指定的 URL 路径。`DefaultRouter` 类默认会帮我们生成一个API 交互后台的根视图，直接访问 [http://127.0.0.1:8000/api/](https://link.zhihu.com/?target=http%3A//127.0.0.1%3A8000/api/) 就可以进入 API 交互后台。
 
-![img](C:\Users\64206\Desktop\django-rest-framework\img\2\1.jpg)
+![img](.\img\2\1.jpg)
 
 这个页面会列出所有可用的 API，因为现在没有开发任何 API，所以列表为空。
 

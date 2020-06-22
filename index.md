@@ -1,4 +1,4 @@
-![img](C:\Users\64206\Desktop\django-rest-framework\img\Django REST Framework.jpg)
+![img](.\img\Django REST Framework.jpg)
 
 # Django REST Framework 教程
 

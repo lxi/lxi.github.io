@@ -184,7 +184,7 @@ path('api/index/', views.index)
 
 启动开发服务器，打开浏览器访问 [http://127.0.0.1:8000/api/index/](https://link.zhihu.com/?target=http%3A//127.0.0.1%3A8000/api/index/) ，可以看到接口返回了文章列表 JSON 格式的数据（默认为 JSON）。
 
-![img](C:\Users\64206\Desktop\django-rest-framework\img\3\1.jpg)
+![img](.\img\3\1.jpg)
 
 目前来说，这个接口其实作用不大。不过在后续的教程中，我们学习前端框架 Vue，那个时候，RESTful API 就有了它的用武之地了。
 

@@ -1,6 +1,6 @@
 # 欢迎来到 HelloDjango 全栈系列教程第二步——Django REST Framework 教程！
 
-![img](C:\Users\64206\Desktop\django-rest-framework\img\Django REST Framework.jpg)
+![img](.\img\Django REST Framework.jpg)
 
 首先恭喜你完成了 HelloDjango 全栈系列教程的第一步——**[Django 博客教程（第二版）](https://link.zhihu.com/?target=https%3A//www.zmrenwu.com/courses/hellodjango-blog-tutorial/)**，在这个教程中，我们学习了基于传统模板引擎的开发方式，前端展示的 HTML 页面由后端负责渲染，后端程序员包揽了前后端开发的全部工作。
 
