@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>思维触觉 Thinking touch</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-touch-icon-next.png"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32-next.png"/>
+	<link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16-next.png"/>
+	
+	<!--<link rel="stylesheet" type="text/css" href="font/font.css"/>-->
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="node_modules/element-ui/lib/theme-chalk/index.css"/>
+	<script src="node_modules/element-ui/lib/index.js" type="text/javascript"></script>-->
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<script src="lib/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="app">
+	<div id="logo">
+		<h1>思维触觉</h1>
+		<h4><i>Thinking touch</i></h4>
+	</div>
+	<div id="slogan">
+		<p>技术让生活更便捷</p>
+	</div>
+	<div class="daohang" style="margin: 15px 0">
+		<el-row>
+			<el-button @click="bodys=0" plain>主页</el-button>
+			<a href="/blog"><el-button type="primary" plain>博客</el-button></a>
+            <el-dropdown trigger="click">
+	          <el-button class="el-dropdown-link" type="success" plain>小项目</el-button>
+              <el-dropdown-menu slot="dropdown">
+                <a href="/xxm/mofang/"><el-dropdown-item>页面魔方</el-dropdown-item></a>
+                <a href="/xxm/img_txt/"><el-dropdown-item>图片转换</el-dropdown-item></a>
+                <a href="https://stackedit.io/"><el-dropdown-item>Markdown编辑器</el-dropdown-item></a>
+                <a href="./order.html"><el-dropdown-item>早餐点餐</el-dropdown-item></a>
+                <a href="/xxm/paiban/"><el-dropdown-item>排班表</el-dropdown-item></a>
+                <!--<a href="/xxm/mofang/"><el-dropdown-item>视频</el-dropdown-item></a>-->
+              </el-dropdown-menu>
+            </el-dropdown>
+			<a href="#"><el-button type="info" plain>相关</el-button></a>
+			<a href="#"><el-button type="warning" plain>留言板</el-button></a>
+			<el-button @click="bodys=2" type="danger" plain>关于我</el-button>
+		</el-row>
+	</div>
+	<div class="bodys">
+		<template v-if="bodys==0">
+          <el-carousel :interval="4000" type="card" class="banner">
+            <el-carousel-item v-for="item in banner" :key="item">
+            	<img width="100%" height="100%" :src="'img/banner/'+item"/>
+            </el-carousel-item>
+          </el-carousel>
+        </template>
+        <el-card class="box-card" v-if="bodys==2">
+        	<p><img src="img/AI/蓝凌.svg" width="160px"/></p>
+          <p>域名：thinkingtouch.com</p>
+          <p>邮箱：642062077@qq.com</p>
+          <p><i class="fa fa-github-square" aria-hidden="true"></i>github：lanlingnian</p>
+          <p><i style="color: green;" class="fa fa-weixin" aria-hidden="true"></i>微信：</p>
+          <p><img src="img/微信.jpg" width="100px" /></p>
+        </el-card>
+	</div>
+	<div id="foot">
+		
+		<div class="xiang x1">
+			<!--<img class="hulu" src="img/88.png"/>-->
+        	<div class="pic pic1"></div>
+		</div>
+		<div class="xiang x2">
+			<p><a target="_Blank" style="text-decoration:none;color: #000000;font-size: 15px;" href="http://www.beian.miit.gov.cn">京ICP备19048621号</a></p>
+			&copy; 2019<img width="32px" src="img/AI/蓝凌.svg"/> <i class="fa fa-user"></i> 孙佳林
+		</div>
+		<div class="ciang">
+			<!--<div title="MySSL 安全签章" id="myssl_seal" onclick="window.open('https://myssl.com/seal/detail?domain=www.thinkingtouch.com','MySSL安全签章','height=800,width=470,top=0,right=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no')" style="text-align: center">
+				<img src="https://sealres.myssl.com/seal/img/2x/seal.png?domain=www.thinkingtouch.com" alt="MySSL 安全签章" style="width: auto; height: 39.2px; cursor: pointer">
+			</div>-->
+		</div>
+	</div>
+	<!--安全认证-->
+	<div id="cc-myssl-id" onclick="window.open('https://myssl.com/seal/detail?domain=www.thinkingtouch.com','MySSL安全签章','height=800,width=470,top=0,right=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no')" style="position: fixed;right: 0;bottom: 0;width: 65px;height: 65px;z-index: 99;">
+    	<img src="https://static.myssl.com/res/images/myssl-id.png" alt="" style="width:100%;height:100%">
+	</div>
+</div>
+</body>
+
+<!-- 先引入 Vue -->
+<script src="lib/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="lib/l2dwidget.min.js" type="text/javascript"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { 
+        	visible: false,
+        	bodys: 0,
+        	banner: [
+        		'001.webp',
+        		'002.webp',
+        		'003.webp',
+        		'004.jpg',
+        		'005.jpg',
+        		'006.jpg',
+        	]
+        }
+      }
+    })
+  </script>
+
+
+<script>
+    L2Dwidget.init({
+        "model": {
+//          jsonPath: "https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json",
+            
+            jsonPath: "https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json",
+//              jsonPath: 'https://cdn2.zzzmh.cn/live2d/model/hijiki/assets/hijiki.model.json',
+            "scale": 1
+        },
+        "display": {
+        	"superSample":1,
+            "position": "right",
+            "width": 200,
+            "height": 245,
+            "hOffset": 0,
+            "vOffset": 0
+        },
+        "mobile": {
+            "show": true,
+            "scale": 1,
+            "motion": true
+        },
+        "react": {
+            "opacityDefault": 1,
+            "opacityOnHover": 0.75
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,13 @@
+@font-face {
+	font-family:kt;
+	src: url('楷体_GB2312.ttf');
+}
+@font-face {
+	font-family:mnkt;
+	src: url('迷你简硬笔楷书.TTF');
+}
+/*Adamas.otf*/
+@font-face {
+	font-family:BellMT;
+	src: url('Bell MT.ttf');
+}

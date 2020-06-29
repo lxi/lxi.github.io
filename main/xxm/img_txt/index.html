@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片转换</title>
+</head>
+<body>
+	<!-- 文件选择 -->
+	<input type="file" onchange="toDataURL(this)" />
+	<hr>
+	<!-- 显示编码后文本 -->
+	<textarea id="lok" style="width:100%;height:200px;"></textarea>
+	<hr>
+	<!-- 编码后图片显示 -->
+	<img id="look" src="">
+<script type="text/javascript">
+    function toDataURL(el){
+        let reader = new FileReader(); 
+        reader.onloadend = function(){
+            console.log(reader.result);
+        	document.getElementById('lok').value=reader.result;
+        	document.getElementById('look').src=reader.result;
+        	console.log(document.getElementById('look').width);
+        	console.log(document.getElementById('look').height);
+        };
+        reader.readAsDataURL(el.files[0]);  // el.files[0]为选中的文件
+    }
+</script>
+</body>
+</html>
