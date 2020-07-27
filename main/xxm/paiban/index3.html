@@ -320,6 +320,18 @@
 					}
 					this.page(1)
 				}
+				
+				var kr = new Date().getDate();//获取当前日(1-31)
+
+				var time = window.setInterval(function(){         
+					var dr = new Date().getDate();//获取当前日(1-31)
+					console.log("测试"+dr);
+					if(kr!==dr){
+						location.reload();
+					}
+				},1000*10);
+				
+				
 			},
 			methods: {
 				goBack() {
