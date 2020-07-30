@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>排班表</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="../../img/logo/apple-touch-icon-next.png"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="../../img/logo/favicon-32x32-next.png"/>
+		<link rel="icon" type="image/png" sizes="16x16" href="../../img/logo/favicon-16x16-next.png"/>
 		<!--引入样式-->
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 		<link rel="stylesheet" type="text/css" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css" />
@@ -158,6 +161,14 @@
 			.xiu .jia2::after {
 				content: "";
 			}
+
+			.per{
+				color: #f00;
+			}
+			.onec .per{
+				color: #0ee;
+			}
+
 		</style>
 	</head>
 
@@ -209,7 +220,7 @@
 					<div class="f25d" v-for="m in 7">
 						<div v-for="a in 25" :class="tongri(riqi,(m-1)*25+a-1)?'one onec':fun_date(getNewDate(riqi,(m-1)*25),a-1)[2]==1?'one ones':'one'" style="width: 4%;">
 							<p>{{ fun_date(getNewDate(riqi,(m-1)*25),a-1)[3] }}</p>
-							<p>{{ fun_date(getNewDate(riqi,(m-1)*25),a-1)[2] }}</p>
+							<p class="per">{{ fun_date(getNewDate(riqi,(m-1)*25),a-1)[2] }}</p>
 							<!--<p class="xban">{{pai[0][fun_date(getNewDate('2019,09,07',(m-1)*25),a-1)[4]]}}</p>
 							<p class="xban">{{pai[0][fun_date(getNewDate('2019,09,07',(m-1)*25),a-1)[5]]}}</p>-->
 
@@ -322,7 +333,6 @@
 				}
 				
 				var kr = new Date().getDate();//获取当前日(1-31)
-
 				var time = window.setInterval(function(){         
 					var dr = new Date().getDate();//获取当前日(1-31)
 					console.log("测试"+dr);

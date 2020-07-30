@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" viewBox="0 0 720 310" role="img" aria-label="issues: 0 open" style="margin: auto; background: #eeeeee; display: block;" version="1.1" x="0" y="0" xml:space="preserve" aria-hidden="true" >
+	<title>页面</title>
+
+
+    
+<!-- 	<linearGradient id="s" x2="0" y2="100%">
+		<stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+		<stop offset="1" stop-opacity=".1"/>
+	</linearGradient>
+	<clipPath id="r">
+		<rect width="90" height="20" rx="3" fill="#fff"/>
+	</clipPath> -->
+
+	<defs>
+        <clipPath id="mask-page">
+            <path class="stroke-alt stroke-width linecap" d="m240,275 l240,0 0,-217 -240,0z" />
+        </clipPath>
+    </defs>
+    <!-- content page 内容页 -->
+    <g clip-path="url(#mask-page)">
+        <g class="ani-move-page is-animated">
+            <!-- 页面滚动动作 -->
+            <animateTransform attributeType="XML" attributeName="transform" begin="0.1s" dur="5.5s" type="translate" keyTimes="0;0.14;0.28;0.8;0.999999;1" values="0,0;0,0;0,-220;0,-680;0,-680;0,0" repeatCount="indefinite" />
+
+
+            <!-- section one 第一节 -->
+            <path class="stroke stroke-width linecap" d="m0,275 m254,-203 l212,0 0,112 -212,0z" fill="none" />
+            <path class="ri stroke-alt stroke-width linecap" d="m0,275 m272,-172 a13 13 180 0 1 26,0 a13 13 180 0 1 -26,0" fill="none"/>
+            <path class="shan stroke stroke-width linecap" d="m0,275 m254,-203 m22,112 l34,-44 a9 9 180 0 1 13,-1 l15,16 38,-48 a5 5 180 0 1 8.4,0 l60,77" fill="none" />
+            <path class="stroke stroke-width linecap" d="m0,275 m254,-67 l212,0 m-212,10 l54,0 m25,0 l54,0 m25,0 l54,0 m-212,10 l54,0 m25,0 l54,0 m25,0 l54,0" fill="none" />
+            <!-- button section one 按钮一段 -->
+            <path class="stroke stroke-width linecap" d="m350,250 a10 10 180 0 1 20,0 a10 10 180 0 1 -20,0 m6.8,-1.7 l3.2,3.2 3.2,-3.2" fill="none" />
+            <path class="stroke stroke-width linecap" d="m318,290 l0,430" fill="none" />
+            <path class="stroke stroke-width linecap" d="m333,306 l54,0 m-54,10 l54,0 m-54,10 l133,0 m-133,10 l133,0" fill="none" />
+            <path class="stroke stroke-width linecap" d="m333,356 l133,0 0,78 -133,0 0,-78 m0,90 l54,0 m-54,10 l54,0 m-54,20 133,0 0,78 -133,0 0,-78 m0,90 l54,0 m-54,10 l54,0 m-54,20 133,0 0,78 -133,0 0,-78 m0,90 l54,0 m-54,10 l54,0 m-54,20" fill="none" />
+            <!-- section two 第二节 -->
+            <path class="stroke stroke-width linecap" d="m0,680 m0,275 m254,-203 l212,0 0,112 -212,0z" fill="none" />
+            <path class="ri stroke-alt stroke-width linecap" d="m0,680 m0,275 m272,-172 a13 13 180 0 1 26,0 a13 13 180 0 1 -26,0" fill="none"/>
+            <path class="shan stroke stroke-width linecap" d="m0,680 m0,275 m254,-203 m22,112 l34,-44 a9 9 180 0 1 13,-1 l15,16 38,-48 a5 5 180 0 1 8.4,0 l60,77" fill="none" />
+            <path class="stroke stroke-width linecap" d="m0,680 m0,275 m254,-67 l212,0 m-212,10 l54,0 m25,0 l54,0 m25,0 l54,0 m-212,10 l54,0 m25,0 l54,0 m25,0 l54,0" fill="none" />
+            <!-- button section two 按钮二段 -->
+            <path class="stroke stroke-width linecap" d="m0,680 m350,250 a10 10 180 0 1 20,0 a10 10 180 0 1 -20,0 m6.8,-1.7 l3.2,3.2 3.2,-3.2" fill="none" />
+        </g>
+        <g class="ani-move-menu is-animated">
+            <animateTransform attributeType="XML" attributeName="transform" begin="0.1s" dur="5.5s" type="translate" keyTimes="0;0.14;0.28;0.686957;0.8;0.999999;1" values="0,0;0,0;0,-220;0,-220;0,-320;0,-680;0,0" repeatCount="indefinite" />
+
+            <g>
+                <path class="stroke stroke-width linecap" d="m254,306 l54,0 m-54,10 l54,0 m-54,10 l54,0 m-54,10 l54,0" fill="none" />
+            </g>
+        </g>
+    </g>
+    <!-- fade button 淡入按钮 -->
+    <g class="ani-fade-button is-animated">
+        <!-- 按钮淡入淡出动作 -->
+        <animate attributeType="CSS" attributeName="opacity" begin="0.1s" dur="5.5s" keyTimes="0;0.09;0.11;0.12;1" values="0;1;1;0;0" repeatCount="indefinite" />
+
+        <path class="stroke-background stroke-overlay stroke-width linecap" d="m350,250 a10 10 180 0 1 20,0 a10 10 180 0 1 -20,0 m6.8,-1.7 l3.2,3.2 3.2,-3.2" fill="none" />
+        <path class="stroke-alt stroke-width linecap" d="m350,250 a10 10 180 0 1 20,0 a10 10 180 0 1 -20,0 m6.8,-1.7 l3.2,3.2 3.2,-3.2" fill="none" />
+    </g>
+    <!-- baseline 基线 -->
+        <!--              ╭─────────────────────────────╮                     -->
+        <!--              │  O O O                      │                     -->
+        <!--              ├─────────────────────────────┤                     -->
+        <!--              │                             │                     -->
+        <!--              │                             │                     -->
+        <!--              │                             │                     -->
+        <!--              │                             │                     -->
+        <!--              │                             │                     -->
+        <!--              │                             │                     -->
+        <!--  ────────────┘                             └───────────────      -->
+
+        <!-- 外框 -->
+        <!--    ╭──╮   -->
+        <!--  ──┘  └── -->
+    <path class="stroke stroke-width linecap" d="m0,275 l240,0 0,-230 a5 5 90 0 1 5,-5 l230,0 a5 5 90 0 1 5,5 l0,230 240,0" fill="none"/>
+        <!-- 头部分隔横线 -->
+        <!-- ──── -->
+    <path class="stroke stroke-width linecap" d="m0,275 m240,-217 l240,0" fill="none"/>
+        <!-- 头部三圆圈 -->
+        <!-- O O O -->
+    <!-- <path class="stroke stroke-width linecap ceshi" d="m0,275 m240,-226 m10,0 a4 4 180 0 1 8,0 a4 4 180 0 1 -8,0 m14,0 a4 4 180 0 1 8,0 a4 4 180 0 1 -8,0 m14,0 a4 4 180 0 1 8,0 a4 4 180 0 1 -8,0" fill="none" style="stroke:#12353C;stroke-width:2" /> -->
+
+    <path class="stroke stroke-width linecap ceshi1" d="m0,275 m240,-226 m10,0 a4 4 180 0 1 8,0 a4 4 180 0 1 -8,0 " fill="none"/>
+
+    <path class="stroke stroke-width linecap ceshi2" d="m264,49 a4 4 180 0 1 8,0 a4 4 180 0 1 -8,0" fill="none"/>
+
+    <path class="stroke stroke-width linecap ceshi3" d=" m278,49 a4 4 180 0 1 8,0 a4 4 180 0 1 -8,0" fill="none"/>
+
+	<defs>
+        <style>
+            <!-- 头部圆点动画 -->
+            .ceshi1:hover{
+                fill:#eb635d;
+            }
+            .ceshi2:hover{
+                fill:#edbd2c;
+            }
+            .ceshi3:hover{
+                fill:#31c549;
+            }
+            <!-- 太阳 -->
+            .ri{
+                stroke:#fff;
+            }
+            .ri:hover{
+                fill:#ffab43;
+            }
+            .shan:hover{
+                fill:#4caf50;
+            }
+            <!-- 框架线条颜色 -->
+            .stroke{
+                stroke:#12353C;
+            }
+            <!-- 框架线条宽度 -->
+            .stroke-width{
+                stroke-width:2;
+            }
+            <!-- 框架线条线冒 -->
+            .linecap{
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+            <!-- 按钮颜色 -->
+            .stroke-background {
+                stroke: #eddd3e;
+            }
+        </style>
+    </defs>
+
+</svg>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: #29262c;
+        }
+        svg{
+            color: #8453E3;
+        }
+
+    </style>
+</head>
+<body>
+
+  <div class="demo-content align-center line-drawing-demo">
+    <svg viewBox="0 0 280 120">
+      <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="1" class="lines">
+
+
+<!--         <path class="el" d="M58 80V50.12C57.7 41.6 51.14 35 43 35a15 15 0 0 0 0 30h7.5v15H43a30 30 0 1 1 0-60c16.42 0 29.5 13.23 30 29.89V80H58z" style="stroke-dashoffset: 0px;" stroke-dasharray="316.85528564453125"></path>
+        <path class="el" d="M73 80V20H58v60h15z" style="stroke-dashoffset: 0px;" stroke-dasharray="150"></path>
+        <path class="el" d="M58 80V49.77C58.5 33.23 71.58 20 88 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80H58zm75 0V20h-15v60h15z" style="stroke-dashoffset: 0px;" stroke-dasharray="441.1739501953125"></path>
+        <path class="el" d="M118 80V49.77C118.5 33.23 131.58 20 148 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80h-15zm-7.5-60a7.5 7.5 0 1 1-7.48 8v-1c.25-3.9 3.5-7 7.48-7z" style="stroke-dashoffset: 0px;" stroke-dasharray="338.3053894042969"></path>
+        <path class="el" d="M133 65a15 15 0 0 1-15-15v-7.5h-15V50a30 30 0 0 0 30 30V65zm30 15V49.77C163.5 33.23 176.58 20 193 20a30 30 0 0 1 30 30v30h-15V50a15 15 0 0 0-15-15c-8.14 0-14.7 6.6-15 15.12V80h-15z" style="stroke-dashoffset: 0px;" stroke-dasharray="406.8699035644531"></path>
+        <path class="el" d="M238 65a15 15 0 0 1 0-30c8.1 0 14.63 6.53 15 15h-15v15h30V49.89C267.5 33.23 254.42 20 238 20a30 30 0 0 0 0 60V65z" style="stroke-dashoffset: 0px;" stroke-dasharray="301.8561706542969"></path>
+        <path class="el" d="M260.48 65a7.5 7.5 0 1 1-7.48 8v-1c.26-3.9 3.5-7 7.48-7z" style="stroke-dashoffset: 2.32968px;" stroke-dasharray="47.128875732421875"></path> -->
+
+        <path class="el" d="M30 20
+C22 8 40 8 30 20
+
+Q29 22 25 25
+
+Q5 40 30 55
+Q50 65 60 72
+C80 95 40 95 60 72
+
+Q65 67 80 57
+C88 52 88 62 80 57
+
+Q75 55 68 45
+C60 30 80 30 68 45
+Q62 50 50 55
+C-50 115 150 115 50 55
+Q38 50 32 45
+C20 30 40 30 32 45
+
+Q25 55 20 57
+C12 52 12 62 20 57
+
+Q35 65 40 72
+C60 95 20 95 40 72
+
+Q50 65 70 55
+Q95 40 75 25
+Q71 22 70 20
+
+C60 8 78 8 70 20
+
+Q65 32 50 45
+C-80 130 180 130 50 45
+Q35 32 30 20
+
+"
+style="stroke-dashoffset: 0.1px; stroke-linecap:round; stroke-linejoin: round;"
+/>
+
+
+
+      </g>
+    </svg>
+  </div>
+    <svg id="mysvg" width="400" height="300" xmlns="http://www.w3.org/2000/svg" >
+        <!-- 灰色投影 -->
+        <ellipse cx="154" cy="154" rx="150" ry="120" style="fill: #999;"></ellipse>
+ 
+        <!-- 浅蓝色椭圆 -->
+        <ellipse cx="152" cy="152" rx="150" ry="120" style="fill: #cef;"></ellipse>
+ 
+        <!-- 上部分浅红色-->
+        <!-- 大椭圆弧画笔起点在（302，152），半径rx为150,ry为120,x轴旋转角度为0，圆弧角度大于等于180度为1，以负角度绘制为0，终点为（2，152）
+            小椭圆弧起点在(2,152),半径rx为75，ry为60，x轴旋转角度为0, 圆弧角度等于180度为1，负角度绘制为0，终点为（152，152）-->
+        <!-- <path d="M 302 152 A 150 120, 0, 1, 0, 2 152 A 75 60, 0 , 1, 0, 152 152" style="fill:#fcc;"></path>   -->
+        <path d="M 302 152 A 150 120 0 1 0 2 152 A 75 60 0 1 0 152 152" style="fill:#fcc;"></path>  
+ 
+        <!-- 浅蓝色小半圆，填充符号右上方 -->
+        <path d="M 152 152 A 75 60 0 1 1 302 152" style="fill:#cef;"></path>
+ 
+    </svg>
+
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="anime-master/lib/anime.min.js"></script>
+<script src="critical.js"></script>
+<script>
+
+
+
+anime({
+  targets: '.line-drawing-demo .lines path',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: 'easeInOutSine',
+  duration: 15500,
+  delay: function(el, i) { return i * 250 },
+  direction: 'alternate',
+  loop: !true
+});
+
+//从起点开始画完
+strokeDashoffset: [anime.setDashoffset, 0] 
+
+
+
+
+
+
+
+</script>
+</html>
