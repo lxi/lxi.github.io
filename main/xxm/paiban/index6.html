@@ -183,6 +183,7 @@
 				border-radius: 5px;
 				color: #fff;
 				margin: auto;
+				overflow:hidden;
 			}
 			.cebian:hover{
 				background: #000000aa;
@@ -194,10 +195,10 @@
 				left: -5px;
 			}
 			.cebian.left{
-				left: 5px;
+				left: 0px;
 			}
 			.cebian.right{
-				right: 5px;
+				right: 0px;
 			}
 		</style>
 	</head>
@@ -216,43 +217,7 @@
 			<el-container>
 				<el-header style="height: 40px;">
 					<el-button-group style="width: 100%;">
-						<el-button style="width: 20%;" type="primary" @click="goBack" icon="el-icon-arrow-left"></el-button>
-						<!--<el-button style="width: 10%;" type="primary" @click="goBack" icon="el-icon-d-arrow-left"></el-button>-->
-						<el-button style="width: 60%;" type="primary" icon="el-icon-time">中心科排班表</el-button>
-						<!--<el-button style="width: 20%;" type="primary" icon="el-icon-more"></el-button>-->
-						<el-dropdown style="width: 20%;">
-							<el-button class="el-dropdown-link" style="width: 100%;" type="primary" icon="el-icon-more"></el-button>
-							<!--<span class="el-dropdown-link">
-						     下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
-						  </span>-->
-							<el-dropdown-menu slot="dropdown">
-
-								<el-button-group>
-									<el-button @click="page(-1)" :type='tab(riqi,"2018,09,22")?"primary":"info"' size="mini" icon="el-icon-arrow-left">上一页</el-button>
-									<el-button @click="page(1)" type="primary" size="mini">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
-								</el-button-group>
-
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='0'>默认</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='1'>一科</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='2'>二科</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='3'>三科</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='4'>四科</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='5'>五科</el-radio>
-								</el-dropdown-item>
-							</el-dropdown-menu>
-						</el-dropdown>
-
+						<el-button style="width: 100%;" type="primary" icon="el-icon-time">中心科排班表</el-button>
 					</el-button-group>
 				</el-header>
 				<el-main>

@@ -168,12 +168,48 @@
 			.onec .per{
 				color: #0ee;
 			}
-
+			
+			
+			.cebian{
+				position: absolute;
+				top: 40%;
+				width: 10px;
+				height: 100px;
+				background: #00000055;
+				border-radius: 5px;
+				color: #fff;
+				margin: auto;
+				overflow:hidden;
+			}
+			.cebian:hover{
+				background: #000000aa;
+			}
+			.cebian li{
+				position: absolute;
+				top: 40px;
+				margin: auto;
+				left: -5px;
+			}
+			.cebian.left{
+				left: 0px;
+			}
+			.cebian.right{
+				right: 0px;
+			}
 		</style>
 	</head>
 
 	<body>
 		<div id="app">
+			
+
+			<div class="cebian left" @click="page(-1)">
+				<li class="el-icon-arrow-left"></li>
+			</div>
+			<div class="cebian right" @click="page(1)">
+				<li class="el-icon-arrow-right"></li>
+			</div>
+
 			<el-container>
 				<el-header style="height: 40px;">
 					<el-button-group style="width: 100%;">
@@ -224,8 +260,8 @@
 							<!--<p class="xban">{{pai[0][fun_date(getNewDate('2019,09,07',(m-1)*25),a-1)[4]]}}</p>
 							<p class="xban">{{pai[0][fun_date(getNewDate('2019,09,07',(m-1)*25),a-1)[5]]}}</p>-->
 
-							<p class="xban">{{pai[fun_date(getNewDate(riqi,(m-1)*25),a-1)[4]+1==keshi?1:0][fun_date(getNewDate(riqi,(m-1)*25),a-1)[4]]}}</p>
-							<p class="xban">{{pai[fun_date(getNewDate(riqi,(m-1)*25),a-1)[5]+1==keshi?1:0][fun_date(getNewDate(riqi,(m-1)*25),a-1)[5]]}}</p>
+							<p class="xban" @click="danclick(fun_date(getNewDate(riqi,(m-1)*25),a-1)[4]+1)">{{pai[fun_date(getNewDate(riqi,(m-1)*25),a-1)[4]+1==keshi?1:0][fun_date(getNewDate(riqi,(m-1)*25),a-1)[4]]}}</p>
+							<p class="xban" @click="danclick(fun_date(getNewDate(riqi,(m-1)*25),a-1)[5]+1)">{{pai[fun_date(getNewDate(riqi,(m-1)*25),a-1)[5]+1==keshi?1:0][fun_date(getNewDate(riqi,(m-1)*25),a-1)[5]]}}</p>
 
 							<div :class="a==25?'nianyue yue':a==1?'nianyue nian':'nianyue'" v-if="fun_date(getNewDate(riqi,(m-1)*25),a-1)[2]==1">
 								{{ fun_date(getNewDate(riqi,(m-1)*25),a-1)[0] }}年 {{ fun_date(getNewDate(riqi,(m-1)*25),a-1)[1] }}月
@@ -345,6 +381,13 @@
 				
 			},
 			methods: {
+				danclick(i){
+					if(i==this.keshi){
+						this.keshi = 0;
+					}else {
+						this.keshi = i;
+					}
+				},
 				goBack() {
 					console.log('返回');
 					window.history.back(-1);
