@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>公转换农历</title>
+
+    <script src='./calendar.js'></script>
+
+</head>
+
+<body>
+
+    <div>当前日期 <span class='new'></span></div>
+
+    <div>农历: <span class='old'></span></div>
+
+    <script>
+
+ 
+
+           //var calendar= require('./calendar.js')
+
+        
+
+            var nowDate = new Date('2020.6.7');           
+
+            document.getElementsByClassName('new')[0].innerHTML=nowDate;
+
+ 
+
+            // 输入公历年月日，得出农历信息
+
+            var nongliStr = calendarFormatter.solar2lunar(nowDate.getFullYear(),nowDate.getMonth() + 1, nowDate.getDate());
+
+            console.log(nongliStr,'我打印出的是农历');
+
+ 
+
+            document.getElementsByClassName('old')[0].innerHTML=nongliStr.gzYear+';'+nongliStr.gzMonth+';'+nongliStr.gzDay+';'+nongliStr.IMonthCn+nongliStr.IDayCn+';'+nongliStr.Animal
+
+           
+
+            // 输入农历年月日，得出公历信息;输入的必须是数字：如2020年农历的7月初八
+
+             var gongliStr  = calendarFormatter.lunar2solar(2020, 7, 8);
+
+             console.log(gongliStr,'我打印出的是公历')            
+
+               
+
+// Animal: "鼠"
+// IDayCn: "初八"
+// IMonthCn: "七月"
+// Term: null
+// astro: "处女座"
+// cDay: 26
+// cMonth: 8
+// cYear: 2020
+// gzDay: "辛丑"
+// gzMonth: "甲申"
+// gzYear: "庚子"
+// isLeap: false
+// isTerm: false
+// isToday: false
+// lDay: 8
+// lMonth: 7
+// lYear: 2020
+// nWeek: 3
+// ncWeek: "星期三"
+
+    </script>
+
+</body>
+
+</html>
