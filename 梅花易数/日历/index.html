@@ -11,14 +11,15 @@
     <title>公转换农历</title>
 
     <script src='./calendar.js'></script>
+    <script src='./js/linshi.js'></script>
 
 </head>
 
 <body>
 
-    <div>当前日期 <span class='new'></span></div>
+    <div>系统日期 <span class='new'></span></div>
 
-    <div>农历: <span class='old'></span></div>
+    <div>当前日期: <span class='old'></span></div>
 
     <script>
 
@@ -28,7 +29,8 @@
 
         
 
-            var nowDate = new Date('2020.6.7');           
+            // var nowDate = new Date('2020.6.7');      
+            var nowDate = new Date();         
 
             document.getElementsByClassName('new')[0].innerHTML=nowDate;
 
@@ -40,20 +42,24 @@
 
             console.log(nongliStr,'我打印出的是农历');
 
- 
+            var daystr = nongliStr.lYear+'年'+nongliStr.lMonth+'月'+nongliStr.lDay+'日 '+
+                        '农历'+nongliStr.IMonthCn+nongliStr.IDayCn+' '+
+                        nongliStr.gzYear+''+nongliStr.Animal+'年 '+nongliStr.gzMonth+'月 '+nongliStr.gzDay+'日'
+            if(nongliStr.isTerm){
+                daystr += ' 今日'+nongliStr.Term
+            }
 
-            document.getElementsByClassName('old')[0].innerHTML=nongliStr.gzYear+';'+nongliStr.gzMonth+';'+nongliStr.gzDay+';'+nongliStr.IMonthCn+nongliStr.IDayCn+';'+nongliStr.Animal
-
+            // document.getElementsByClassName('old')[0].innerHTML=nongliStr.gzYear+';'+nongliStr.gzMonth+';'+nongliStr.gzDay+';'+nongliStr.IMonthCn+nongliStr.IDayCn+';'+nongliStr.Animal
+            document.getElementsByClassName('old')[0].innerHTML = daystr
            
 
             // 输入农历年月日，得出公历信息;输入的必须是数字：如2020年农历的7月初八
 
-             var gongliStr  = calendarFormatter.lunar2solar(2020, 7, 8);
+             var gongliStr  = calendarFormatter.lunar2solar(2020, 3, 10);
 
              console.log(gongliStr,'我打印出的是公历')            
 
                
-
 
 // 生肖-------------// Animal: "鼠"
 // 农历日期---------// IDayCn: "廿七"
@@ -66,8 +72,8 @@
 // 干支日期---------// gzDay: "壬辰"
 // 干支月份---------// gzMonth: "庚辰"
 // 干支年份---------// gzYear: "庚子"
-// 是否闰月---------// isLeap: false
-// 是否是节---------// isTerm: true
+// 是否是闰月-------// isLeap: false
+// 是否是节气-------// isTerm: true
 // 是否为当日-------// isToday: false
 // 农历日期---------// lDay: 27
 // 农历月份---------// lMonth: 3
