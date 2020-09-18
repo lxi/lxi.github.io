@@ -200,11 +200,6 @@
 			.cebian.right{
 				right: 0px;
 			}
-			.jiari:hover{
-				z-index: 100;
-				background-color: #0f0;
-				color: rgb(0 120 255 / 80%);
-			}
 		</style>
 	</head>
 
@@ -222,7 +217,7 @@
 			<el-container>
 				<el-header style="height: 40px;">
 					<el-button-group style="width: 100%;">
-						<el-button style="width: 100%;" type="primary" icon="el-icon-time">中心科排班表</el-button>
+						<el-button style="width: 100%;" type="primary" icon="el-icon-time" onclick="window.open('./xxm/paiban/index6.html','排班表','height=900,width=700,top=0,right=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no')">中心科排班表</el-button>
 					</el-button-group>
 				</el-header>
 				<el-main>
@@ -243,16 +238,6 @@
 								style="width: 32px;left: -5px;background-color: #FFEB3B;">
 								今日
 							</div>
-
-							<!-- 节假日 -->
-							<!-- <div :aaa="fun_date(getNewDate(riqi,(m-1)*25),a-1)"> {{ aaa[0] }} </div> -->
-							<!-- <div :id="(a,b,c) in fun_date(getNewDate(riqi,(m-1)*25),a-1)">{{ b }}</div> -->
-							<div class="nianyue jiari" v-if="jiaqi(fun_date(getNewDate(riqi,(m-1)*25),a-1)[0],fun_date(getNewDate(riqi,(m-1)*25),a-1)[1],fun_date(getNewDate(riqi,(m-1)*25),a-1)[2]).isTerm"
-								style="width: 50px;left: -15px;background-color: rgb(59 246 255 / 21%);color: rgb(233 0 255 / 69%);">
-								{{ jiaqi(fun_date(getNewDate(riqi,(m-1)*25),a-1)[0],fun_date(getNewDate(riqi,(m-1)*25),a-1)[1],fun_date(getNewDate(riqi,(m-1)*25),a-1)[2]).Term }}
-							</div>
-
-
 						</div>
 						<div class="nxiu">
 							<div class="xiu">
@@ -315,8 +300,6 @@
 	</body>
 	<!-- 先引入 Vue -->
 	<script src="../../lib/vue.js"></script>
-	<!-- 先引入 万年历 -->
-	<script src="../../../梅花易数/日历/calendar.js"></script>
 	<!-- 引入组件库 -->
 	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 	<script type="text/javascript">
@@ -331,28 +314,7 @@
 						['➊', '➋', '➌', '➍', '➎']
 					],
 					ban: ['➊', '➋', '➌', '➍', '➎'],
-					xing: ['日', '一', '二', '三', '四', '五', '六'],
-					jieri_yang:[
-						[1,1,'元旦'],
-						[5,1,'劳动节'],
-						[5,4,'青年节'],
-						[6,1,'儿童节'],
-						[8,1,'建军节'],
-						[10,1,'国庆节']
-					],
-					jieri_yin:[
-						[1,1,'春节'],
-						[1,15,'元宵节'],
-						[2,2,'龙抬头'],
-						[5,5,'端午节'],
-						[7,7,'七夕'],
-						[7,15,'中元节'],
-						[8,15,'中秋节'],
-						[9,9,'重阳节'],
-						[10,1,'寒衣节'],
-						[10,15,'下元节'],
-						[12,23,'小年']
-					]
+					xing: ['日', '一', '二', '三', '四', '五', '六']
 				}
 			},
 			mounted() { //自动执行
@@ -386,39 +348,6 @@
 				
 			},
 			methods: {
-				jiaqi(yy,mm,dd){
-					jieri = calendarFormatter.solar2lunar(yy, mm, dd);
-					for(var i=0;i<this.jieri_yang.length;i++){
-						if(mm==this.jieri_yang[i][0] && dd==this.jieri_yang[i][1]){
-							jieri.isTerm = true
-							jieri.Term = this.jieri_yang[i][2]
-						}
-					}
-					for(var i=0;i<this.jieri_yin.length;i++){
-						if(jieri.lMonth==this.jieri_yin[i][0] && jieri.lDay==this.jieri_yin[i][1]){
-							jieri.isTerm = true
-							jieri.Term = this.jieri_yin[i][2]
-						}
-					}
-					if(jieri.lMonth==12 && (jieri.lDay==29 || jieri.lDay==30)){
-						
-						var nd = new Date(yy+'.'+mm+'.'+dd);  
-						nd.setDate(nd.getDate()+1);//获取AddDayCount天后的日期 
-
-						var y = nd.getFullYear();   
-						var m = (nd.getMonth()+1)<10?"0"+(nd.getMonth()+1):(nd.getMonth()+1);//获取当前月份的日期，不足10补0  
-						var d = nd.getDate()<10?"0"+nd.getDate():nd.getDate();//获取当前几号，不足10补0
-						
-						var xn = calendarFormatter.solar2lunar(y, m, d);
-						if(xn.lMonth==1 && xn.lDay==1){
-							jieri.isTerm = true
-							jieri.Term = '除夕'
-						}
-					}
-					
-					
-					return jieri
-				},
 				danclick(i){
 					if(i==this.keshi){
 						this.keshi = 0;
