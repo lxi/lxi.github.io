@@ -441,7 +441,22 @@
 							jieri.Term = this.jieri_yin[i][2]
 						}
 					}
-					if(jieri.lMonth==12 && (jieri.lDay==29 || jieri.lDay==30)){
+// 					if(jieri.lMonth==12 && (jieri.lDay==29 || jieri.lDay==30)){
+						
+// 						var nd = new Date(yy+'.'+mm+'.'+dd);  
+// 						nd.setDate(nd.getDate()+1);//获取AddDayCount天后的日期 
+
+// 						var y = nd.getFullYear();   
+// 						var m = (nd.getMonth()+1)<10?"0"+(nd.getMonth()+1):(nd.getMonth()+1);//获取当前月份的日期，不足10补0  
+// 						var d = nd.getDate()<10?"0"+nd.getDate():nd.getDate();//获取当前几号，不足10补0
+						
+// 						var xn = calendarFormatter.solar2lunar(y, m, d);
+// 						if(xn.lMonth==1 && xn.lDay==1){
+// 							jieri.isTerm = true
+// 							jieri.Term = '除夕'
+// 						}
+// 					}
+					if((jieri.lMonth==12 && (jieri.lDay==29 || jieri.lDay==30))||(jieri.cMonth==4 && (jieri.cDay==3 || jieri.cDay==4 || jieri.cDay==5))){
 						
 						var nd = new Date(yy+'.'+mm+'.'+dd);  
 						nd.setDate(nd.getDate()+1);//获取AddDayCount天后的日期 
@@ -454,6 +469,12 @@
 						if(xn.lMonth==1 && xn.lDay==1){
 							jieri.isTerm = true
 							jieri.Term = '除夕'
+						}else if(xn.isTerm){
+							console.log(xn.Term)
+							if(xn.Term == "清明"){
+								jieri.isTerm = true
+								jieri.Term = '寒食节'
+							}
 						}
 					}
 					
