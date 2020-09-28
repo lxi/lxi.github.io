@@ -646,23 +646,33 @@
 	</script>
 	<script src="https://lxi.github.io/lib/jquery-3.4.1.min.js"></script>
 	<script>
-		var jinh = new Date().getHours();//获取当前时
-		if(jinh<9){
-			// 前一天夜班
-			$('.onec').prev().addClass('onec2')
-			var txt1='<div class="mom" style="top:52px"></div>';
-			$('.onec').prev().append(txt1)
-		}else if(jinh<20){
-			// 今天白班
-			$('.onec').addClass('onec1')
-			var txt1='<div class="mom" style="top:37px"></div>';
-			$('.onec').append(txt1)
-		}else{
-			// 今天夜班
-			$('.onec').addClass('onec2')
-			var txt1='<div class="mom" style="top:52px"></div>';
-			$('.onec').append(txt1)
+		function zaigang(){
+			var jinh = new Date().getHours();//获取当前时
+			if(jinh<9){
+				// 前一天夜班
+				$('.onec').prev().addClass('onec2')
+				var txt1='<div class="mom" style="top:52px"></div>';
+				$('.onec').prev().append(txt1)
+			}else if(jinh<20){
+				// 今天白班
+				$('.onec').addClass('onec1')
+				var txt1='<div class="mom" style="top:37px"></div>';
+				$('.onec').append(txt1)
+			}else{
+				// 今天夜班
+				$('.onec').addClass('onec2')
+				var txt1='<div class="mom" style="top:52px"></div>';
+				$('.onec').append(txt1)
+			}
 		}
+		
+		zaigang()
+		$('.cebian').click(function(){
+			$('.onec2').removeClass("onec2");
+			$('.onec1').removeClass("onec1");
+			$(".mom").remove();
+			zaigang()
+		});
 	</script>
 
 </html>
