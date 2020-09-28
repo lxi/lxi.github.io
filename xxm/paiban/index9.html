@@ -239,10 +239,10 @@
 		<div id="app">
 
 
-			<div class="cebian left" @click="page(-1)">
+			<div class="cebian left mok" @click="page(-1)">
 				<li class="el-icon-arrow-left"></li>
 			</div>
-			<div class="cebian right" @click="page(1)">
+			<div class="cebian right mok" @click="page(1)">
 				<li class="el-icon-arrow-right"></li>
 			</div>
 
@@ -259,8 +259,8 @@
 							<el-dropdown-menu slot="dropdown">
 
 								<el-button-group>
-									<el-button @click="page(-1)" :type='tab(riqi,"2018,09,22")?"primary":"info"' size="mini" icon="el-icon-arrow-left">上一页</el-button>
-									<el-button @click="page(1)" type="primary" size="mini">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+									<el-button class='mok' @click="page(-1)" :type='tab(riqi,"2018,09,22")?"primary":"info"' size="mini" icon="el-icon-arrow-left">上一页</el-button>
+									<el-button class='mok' @click="page(1)" type="primary" size="mini">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
 								</el-button-group>
 
 								<el-dropdown-item>
