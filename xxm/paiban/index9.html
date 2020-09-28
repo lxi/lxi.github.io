@@ -63,6 +63,7 @@
 				-moz-user-select: none;
 				-khtml-user-select: none;
 				user-select: none;
+				z-index: 10;
 			}
 			
 			.one:hover {
@@ -83,6 +84,7 @@
 				height: 15px;
 				top: -5px;
 				vertical-align: middle;
+				z-index: 30;
 			}
 			
 			.nianyue {
@@ -212,6 +214,22 @@
 				z-index: 100;
 				background-color: #0f0;
 				color: rgb(0 120 255 / 80%);
+			}
+			
+			
+			.onec1 p:nth-child(3){
+				color: blue;
+			}
+			.onec2 p:nth-child(4){
+				color: blue;
+			} 
+
+			.mom{
+				position: absolute;
+				width: 100%;
+				height: 16px;
+				background-color: #e500ff9c;
+				z-index: 11;
 			}
 		</style>
 	</head>
@@ -587,6 +605,28 @@
 				}
 			}
 		})
+	</script>
+	<script src="https://lxi.github.io/lib/jquery-3.4.1.min.js"></script>
+	<script>
+		console.log('aaaaaaaaaaaaaaaaaa')
+		
+		var jinh = new Date().getHours();//获取当前时
+		if(jinh<9){
+			// 前一天夜班
+			$('.onec').prev().addClass('onec2')
+			var txt1='<div class="mom" style="top:52px"></div>';
+			$('.onec').prev().append(txt1)
+		}else if(jinh<20){
+			// 今天白班
+			$('.onec').addClass('onec1')
+			var txt1='<div class="mom" style="top:37px"></div>';
+			$('.onec').append(txt1)
+		}else{
+			// 今天夜班
+			$('.onec').addClass('onec2')
+			var txt1='<div class="mom" style="top:52px"></div>';
+			$('.onec').append(txt1)
+		}
 	</script>
 
 </html>
