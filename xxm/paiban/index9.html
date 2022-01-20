@@ -12,6 +12,7 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="../../img/logo/favicon-16x16-next.png"/>
 		<!--引入样式-->
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- <link rel="stylesheet" href="../../lib/elementui/index.css"> -->
 		<link rel="stylesheet" type="text/css" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css" />
 		<style type="text/css">
 			* {
@@ -250,13 +251,13 @@
 			<el-container>
 				<el-header style="height: 40px;">
 					<el-button-group style="width: 100%;">
-						<el-button style="width: 20%;" type="primary" @click="goBack" icon="el-icon-arrow-left"></el-button>
-						<el-button style="width: 60%;" type="primary" icon="el-icon-time" onclick="window.open('./index9.html','排班表','height=900,width=700,top=0,right=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no')">中心科排班表</el-button>
-						<el-dropdown style="width: 20%;">
+						<!-- <el-button style="width: 20%;" type="primary" @click="goBack" icon="el-icon-arrow-left"></el-button>
+						<el-button style="width: 60%;" type="primary" icon="el-icon-time" onclick="window.open('./index9.html','排班表','height=900,width=700,top=0,right=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no')">中心科排班表</el-button> -->
+						<el-button class='mok' type="primary" icon="el-icon-caret-left" style="width: 20%;" @click="page(-1)"></el-button>
+						<el-button type="primary" icon="el-icon-date" style="width: 60%;">中心科排班表</el-button>
+						<el-button class='mok' type="primary" icon="el-icon-caret-right" style="width: 20%;" @click="page(1)"></el-button>
+						<!-- <el-dropdown style="width: 20%;">
 							<el-button class="el-dropdown-link" style="width: 100%;" type="primary" icon="el-icon-more"></el-button>
-							<!--<span class="el-dropdown-link">
-						     下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
-						  </span>-->
 							<el-dropdown-menu slot="dropdown">
 
 								<el-button-group>
@@ -264,26 +265,8 @@
 									<el-button class='mok' @click="page(1)" type="primary" size="mini">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
 								</el-button-group>
 
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='0'>默认</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='1'>一科</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='2'>二科</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='3'>三科</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='4'>四科</el-radio>
-								</el-dropdown-item>
-								<el-dropdown-item>
-									<el-radio v-model="keshi" label='5'>五科</el-radio>
-								</el-dropdown-item>
 							</el-dropdown-menu>
-						</el-dropdown>
+						</el-dropdown> -->
 					</el-button-group>
 				</el-header>
 				<el-main>
@@ -379,7 +362,8 @@
 	<!-- 先引入 万年历 -->
 	<script src="../梅花易数/日历/calendar.js"></script>
 	<!-- 引入组件库 -->
-	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+	<script src="../../lib/elementui/index.js"></script>
 	<script type="text/javascript">
 		new Vue({
 			el: '#app',
