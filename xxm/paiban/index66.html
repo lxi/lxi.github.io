@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>排班表SVG版</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="../../img/logo/apple-touch-icon-next.png"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="../../img/logo/favicon-32x32-next.png"/>
+	<link rel="icon" type="image/png" sizes="16x16" href="../../img/logo/favicon-16x16-next.png"/>
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.zhu {
+				width: 800px;
+				/*height:1568px;*/
+				margin: 45px auto 0;
+				overflow: hidden;
+				background-size: cover;
+				position: absolute;
+				/*background-color: #409EFF33;*/
+				left:0;
+				right:0;
+			}
+			@media screen and ( max-width: 800px) {
+				.zhu {
+					width: 100%;
+				}
+			}
+	</style>
+</head>
+<body>
+	<div class="zhu">
+		<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox='0 0 500 980'>
+				<style>
+					* {
+						/*font-family: "黑体";*/
+						/*font-size: 16px;*/
+					}
+
+					#week{
+						font-family: "宋体";
+						font-size: 16px;
+					}
+
+					#ban1,#ban2,#ban3,#ban4,#ban5{
+						font-family: "黑体";
+						font-size: 16px;
+					}
+					
+					.pai {
+						fill: #00000000;
+					}
+					.paise{
+						fill: #ffa319b5;
+					}
+					.xiu {
+						stroke: black;
+						stroke-width: 1.5;
+					}
+					
+					.nox {
+						-webkit-touch-callout: none;
+						-webkit-user-select: none;
+						-khtml-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none;
+					}
+					text {
+						-webkit-touch-callout: none;
+						-webkit-user-select: none;
+						-khtml-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none;
+					}
+					.secse{
+						stroke: #f00;
+					}
+					.zi{
+						font-size: 10px;
+					}
+					.zise{
+						fill:#f00;
+					}
+				</style>
+				<defs>
+					<g id="ban1">
+						<circle class="pai pai1" onclick="huanse('1')" r="9" stroke="inherit" stroke-width="1" />
+						<text class="nox nox1" onclick="huanse('1')" x="-4" y="5.5" style="fill:inherit">1</text>
+					</g>
+					<g id="ban2">
+						<circle class="pai pai2" onclick="huanse('2')" r="9" stroke="inherit" stroke-width="1" />
+						<text class="nox nox2" onclick="huanse('2')" x="-4" y="5.5" style="fill:inherit">2</text>
+					</g>
+					<g id="ban3">
+						<circle class="pai pai3" onclick="huanse('3')" r="9" stroke="inherit" stroke-width="1" />
+						<text class="nox nox3" onclick="huanse('3')" x="-4" y="5.5" style="fill:inherit">3</text>
+					</g>
+					<g id="ban4">
+						<circle class="pai pai4" onclick="huanse('4')" r="9" stroke="inherit" stroke-width="1" />
+						<text class="nox nox4" onclick="huanse('4')" x="-4" y="5.5" style="fill:inherit">4</text>
+					</g>
+					<g id="ban5">
+						<circle class="pai pai5" onclick="huanse('5')" r="9" stroke="inherit" stroke-width="1" />
+						<text class="nox nox5" onclick="huanse('5')" x="-4" y="5.5" style="fill:inherit">5</text>
+					</g>
+
+					<g id="week" class="nox">
+						<text x=  "2" y="16">六</text>
+						<text x= "22" y="16">日</text>
+						<text x= "42" y="16">一</text>
+						<text x= "62" y="16">二</text>
+						<text x= "82" y="16">三</text>
+						<text x="102" y="16">四</text>
+						<text x="122" y="16">五</text>
+						<text x="142" y="16">六</text>
+						<text x="162" y="16">日</text>
+						<text x="182" y="16">一</text>
+						<text x="202" y="16">二</text>
+						<text x="222" y="16">三</text>
+						<text x="242" y="16">四</text>
+						<text x="262" y="16">五</text>
+						<text x="282" y="16">六</text>
+						<text x="302" y="16">日</text>
+						<text x="322" y="16">一</text>
+						<text x="342" y="16">二</text>
+						<text x="362" y="16">三</text>
+						<text x="382" y="16">四</text>
+						<text x="402" y="16">五</text>
+						<text x="422" y="16">六</text>
+						<text x="442" y="16">日</text>
+						<text x="462" y="16">一</text>
+						<text x="482" y="16">二</text>
+						<text x="502" y="16">三</text>
+						<text x="522" y="16">四</text>
+						<text x="542" y="16">五</text>
+						<text x="562" y="16">六</text>
+						<text x="582" y="16">日</text>
+						<text x="602" y="16">一</text>
+					</g>
+
+					<g id="zu">
+						<use x="0" y="20" xlink:href="#ban1" />
+						<use x="0" y="40" xlink:href="#ban4" />
+						<use x="20" y="20" xlink:href="#ban2" />
+						<use x="20" y="40" xlink:href="#ban1" />
+						<use x="40" y="20" xlink:href="#ban3" />
+						<use x="40" y="40" xlink:href="#ban2" />
+						<use x="60" y="20" xlink:href="#ban4" />
+						<use x="60" y="40" xlink:href="#ban3" />
+						<use x="80" y="20" xlink:href="#ban5" />
+						<use x="80" y="40" xlink:href="#ban4" />
+						<use x="100" y="20" xlink:href="#ban2" />
+						<use x="100" y="40" xlink:href="#ban5" />
+						<use x="120" y="20" xlink:href="#ban3" />
+						<use x="120" y="40" xlink:href="#ban2" />
+						<use x="140" y="20" xlink:href="#ban4" />
+						<use x="140" y="40" xlink:href="#ban3" />
+						<use x="160" y="20" xlink:href="#ban5" />
+						<use x="160" y="40" xlink:href="#ban4" />
+						<use x="180" y="20" xlink:href="#ban1" />
+						<use x="180" y="40" xlink:href="#ban5" />
+						<use x="200" y="20" xlink:href="#ban3" />
+						<use x="200" y="40" xlink:href="#ban1" />
+						<use x="220" y="20" xlink:href="#ban4" />
+						<use x="220" y="40" xlink:href="#ban3" />
+						<use x="240" y="20" xlink:href="#ban5" />
+						<use x="240" y="40" xlink:href="#ban4" />
+						<use x="260" y="20" xlink:href="#ban1" />
+						<use x="260" y="40" xlink:href="#ban5" />
+						<use x="280" y="20" xlink:href="#ban2" />
+						<use x="280" y="40" xlink:href="#ban1" />
+						<use x="300" y="20" xlink:href="#ban4" />
+						<use x="300" y="40" xlink:href="#ban2" />
+						<use x="320" y="20" xlink:href="#ban5" />
+						<use x="320" y="40" xlink:href="#ban4" />
+						<use x="340" y="20" xlink:href="#ban1" />
+						<use x="340" y="40" xlink:href="#ban5" />
+						<use x="360" y="20" xlink:href="#ban2" />
+						<use x="360" y="40" xlink:href="#ban1" />
+						<use x="380" y="20" xlink:href="#ban3" />
+						<use x="380" y="40" xlink:href="#ban2" />
+						<use x="400" y="20" xlink:href="#ban5" />
+						<use x="400" y="40" xlink:href="#ban3" />
+						<use x="420" y="20" xlink:href="#ban1" />
+						<use x="420" y="40" xlink:href="#ban5" />
+						<use x="440" y="20" xlink:href="#ban2" />
+						<use x="440" y="40" xlink:href="#ban1" />
+						<use x="460" y="20" xlink:href="#ban3" />
+						<use x="460" y="40" xlink:href="#ban2" />
+						<use x="480" y="20" xlink:href="#ban4" />
+						<use x="480" y="40" xlink:href="#ban3" />
+					</g>
+
+					<g id="xiu">
+						<line class="sec xiu xiu1" x1="40" y1="0" x2="40" y2="20" style="" />
+						<line class="sec xiu xiu1" x1="180" y1="0" x2="180" y2="20" style="" />
+						<line class="sec xiu xiu1" x1="40" y1="10" x2="180" y2="10" style="stroke-dasharray: 50 40 50;" />
+						<text class="zi zi1 nox" x="95" y="15" onclick="huanse('1')">一科休</text>
+
+						<line class="sec xiu xiu2" x1="140" y1="0" x2="140" y2="20" style="stroke-dasharray: 1.5 1.2;" />
+						<line class="sec xiu xiu2" x1="140" y1="20" x2="140" y2="40" style="" />
+						<line class="sec xiu xiu2" x1="280" y1="0" x2="280" y2="20" style="stroke-dasharray: 1.5 1.2;" />
+						<line class="sec xiu xiu2" x1="280" y1="20" x2="280" y2="40" style="" />
+						<line class="sec xiu xiu2" x1="140" y1="30" x2="280" y2="30" style="stroke-dasharray: 50 40 50;" />
+						<text class="zi zi2 nox" x="195" y="35" onclick="huanse('2')">二科休</text>
+
+						<line class="sec xiu xiu3" x1="240" y1="0" x2="240" y2="20" style="" />
+						<line class="sec xiu xiu3" x1="380" y1="0" x2="380" y2="20" style="" />
+						<line class="sec xiu xiu3" x1="240" y1="10" x2="380" y2="10" style="stroke-dasharray: 50 40 50;" />
+						<text class="zi zi3 nox" x="295" y="15" onclick="huanse('3')">三科休</text>
+
+						<line class="sec xiu xiu4" x1="340" y1="0" x2="340" y2="20" style="stroke-dasharray: 1.5 1.2;" />
+						<line class="sec xiu xiu4" x1="340" y1="20" x2="340" y2="40" style="" />
+						<line class="sec xiu xiu4" x1="480" y1="0" x2="480" y2="20" style="stroke-dasharray: 1.5 1.2;" />
+						<line class="sec xiu xiu4" x1="480" y1="20" x2="480" y2="40" style="" />
+						<line class="sec xiu xiu4" x1="340" y1="30" x2="480" y2="30" style="stroke-dasharray: 50 40 50;" />
+						<text class="zi zi4 nox" x="395" y="35" onclick="huanse('4')">四科休</text>
+
+						<line class="sec xiu xiu5" x1="80" y1="0" x2="80" y2="20" style="stroke-dasharray: 1.5 1.2;" />
+						<line class="sec xiu xiu5" x1="80" y1="20" x2="80" y2="40" style="" />
+						<line class="sec xiu xiu5" x1="440" y1="0" x2="440" y2="20" style="" />
+						<line class="sec xiu xiu5" x1="440" y1="10" x2="460" y2="10" style="" />
+						<line class="sec xiu xiu5" x1="40" y1="30" x2="80" y2="30" style="" />
+						<text class="zi zi5 nox" x="5" y="35" onclick="huanse('5')">五科休</text>
+						<text class="zi zi5 nox" x="465" y="15" onclick="huanse('5')">五科休</text>
+					</g>
+					<g id="lun">
+						<use x="10" y="-10" xlink:href="#zu" stroke="black" value="2" />
+						<use x="0" y="40" xlink:href="#xiu" />
+					</g>
+					<g id="zheng">
+						
+						<use x=   "0" y= "20" xlink:href="#week" />
+						<use x= "-80" y="160" xlink:href="#week" />
+						<use x= "-20" y="300" xlink:href="#week" />
+						<use x="-100" y="440" xlink:href="#week" />
+						<use x= "-40" y="580" xlink:href="#week" />
+						<use x="-120" y="720" xlink:href="#week" />
+						<use x= "-60" y="860" xlink:href="#week" />
+
+						<use x="0" y="60" xlink:href="#lun" />
+						<use x="0" y="200" xlink:href="#lun" />
+						<use x="0" y="340" xlink:href="#lun" />
+						<use x="0" y="480" xlink:href="#lun" />
+						<use x="0" y="620" xlink:href="#lun" />
+						<use x="0" y="760" xlink:href="#lun" />
+						<use x="0" y="900" xlink:href="#lun" />
+					</g>
+
+					<!-- <g id="bc">
+						<rect x="0" y=  "0" width="800" height="20" style="fill:rgb(255,160,160);stroke-width:0; stroke:rgb(0,0,0)" />
+						<rect x="0" y= "20" width="800" height="20" style="fill:rgb(160,160,255);stroke-width:0; stroke:rgb(0,0,0)" />
+						<rect x="0" y= "40" width="800" height="20" style="fill:rgb(160,255,160);stroke-width:0; stroke:rgb(0,0,0)" />
+						<rect x="0" y= "60" width="800" height="20" style="fill:rgb(200,200,200);stroke-width:0; stroke:rgb(0,0,0)" />
+						<rect x="0" y= "80" width="800" height="20" style="fill:rgb(160,160,160);stroke-width:0; stroke:rgb(0,0,0)" />
+						<rect x="0" y="100" width="800" height="20" style="fill:rgb(255,255,255);stroke-width:0; stroke:rgb(0,0,0)" />
+						<rect x="0" y="120" width="800" height="20" style="fill:rgb(255,255,255);stroke-width:0; stroke:rgb(0,0,0)" />
+					</g> -->
+					<mask id="mask_z" x="0" y="0" width="500" height="980" >
+						<rect x="0" y="0" width="500" height="980" style="stroke:none; fill: #ffffff"/>
+					</mask>
+					
+				</defs>
+				
+				<!-- <use x="0" y="0" xlink:href="#bc" style="mask: url(#mask_z)" />
+				<use x="0" y="140" xlink:href="#bc" style="mask: url(#mask_z)" />
+				<use x="0" y="280" xlink:href="#bc" style="mask: url(#mask_z)" /> -->
+				<g id="bg"></g>
+				<g id="riqi"></g>
+				<use x="0" y="0" xlink:href="#zheng" style="stroke: none;mask: url(#mask_z)"/>
+
+				<g>
+					<rect width="20" height="40" x="  0" y="20" onclick="danji(1, 1)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 20" y="20" onclick="danji(1, 2)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 40" y="20" onclick="danji(1, 3)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 60" y="20" onclick="danji(1, 4)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 80" y="20" onclick="danji(1, 5)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="100" y="20" onclick="danji(1, 6)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="120" y="20" onclick="danji(1, 7)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="140" y="20" onclick="danji(1, 8)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="160" y="20" onclick="danji(1, 9)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="180" y="20" onclick="danji(1,10)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="200" y="20" onclick="danji(1,11)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="220" y="20" onclick="danji(1,12)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="240" y="20" onclick="danji(1,13)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="260" y="20" onclick="danji(1,14)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="280" y="20" onclick="danji(1,15)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="300" y="20" onclick="danji(1,16)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="320" y="20" onclick="danji(1,17)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="340" y="20" onclick="danji(1,18)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="360" y="20" onclick="danji(1,19)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="380" y="20" onclick="danji(1,20)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="400" y="20" onclick="danji(1,21)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="420" y="20" onclick="danji(1,22)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="440" y="20" onclick="danji(1,23)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="460" y="20" onclick="danji(1,24)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="480" y="20" onclick="danji(1,25)" style="fill:#0000ff00"/>
+				</g>
+				<g>
+					<rect width="20" height="40" x="  0" y="160" onclick="danji(2, 1)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 20" y="160" onclick="danji(2, 2)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 40" y="160" onclick="danji(2, 3)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 60" y="160" onclick="danji(2, 4)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 80" y="160" onclick="danji(2, 5)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="100" y="160" onclick="danji(2, 6)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="120" y="160" onclick="danji(2, 7)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="140" y="160" onclick="danji(2, 8)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="160" y="160" onclick="danji(2, 9)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="180" y="160" onclick="danji(2,10)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="200" y="160" onclick="danji(2,11)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="220" y="160" onclick="danji(2,12)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="240" y="160" onclick="danji(2,13)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="260" y="160" onclick="danji(2,14)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="280" y="160" onclick="danji(2,15)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="300" y="160" onclick="danji(2,16)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="320" y="160" onclick="danji(2,17)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="340" y="160" onclick="danji(2,18)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="360" y="160" onclick="danji(2,19)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="380" y="160" onclick="danji(2,20)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="400" y="160" onclick="danji(2,21)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="420" y="160" onclick="danji(2,22)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="440" y="160" onclick="danji(2,23)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="460" y="160" onclick="danji(2,24)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="480" y="160" onclick="danji(2,25)" style="fill:#0000ff00"/>
+				</g>
+				<g>
+					<rect width="20" height="40" x="  0" y="300" onclick="danji(3, 1)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 20" y="300" onclick="danji(3, 2)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 40" y="300" onclick="danji(3, 3)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 60" y="300" onclick="danji(3, 4)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 80" y="300" onclick="danji(3, 5)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="100" y="300" onclick="danji(3, 6)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="120" y="300" onclick="danji(3, 7)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="140" y="300" onclick="danji(3, 8)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="160" y="300" onclick="danji(3, 9)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="180" y="300" onclick="danji(3,10)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="200" y="300" onclick="danji(3,11)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="220" y="300" onclick="danji(3,12)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="240" y="300" onclick="danji(3,13)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="260" y="300" onclick="danji(3,14)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="280" y="300" onclick="danji(3,15)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="300" y="300" onclick="danji(3,16)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="320" y="300" onclick="danji(3,17)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="340" y="300" onclick="danji(3,18)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="360" y="300" onclick="danji(3,19)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="380" y="300" onclick="danji(3,20)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="400" y="300" onclick="danji(3,21)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="420" y="300" onclick="danji(3,22)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="440" y="300" onclick="danji(3,23)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="460" y="300" onclick="danji(3,24)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="480" y="300" onclick="danji(3,25)" style="fill:#0000ff00"/>
+				</g>
+				<g>
+					<rect width="20" height="40" x="  0" y="440" onclick="danji(4, 1)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 20" y="440" onclick="danji(4, 2)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 40" y="440" onclick="danji(4, 3)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 60" y="440" onclick="danji(4, 4)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 80" y="440" onclick="danji(4, 5)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="100" y="440" onclick="danji(4, 6)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="120" y="440" onclick="danji(4, 7)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="140" y="440" onclick="danji(4, 8)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="160" y="440" onclick="danji(4, 9)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="180" y="440" onclick="danji(4,10)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="200" y="440" onclick="danji(4,11)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="220" y="440" onclick="danji(4,12)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="240" y="440" onclick="danji(4,13)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="260" y="440" onclick="danji(4,14)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="280" y="440" onclick="danji(4,15)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="300" y="440" onclick="danji(4,16)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="320" y="440" onclick="danji(4,17)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="340" y="440" onclick="danji(4,18)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="360" y="440" onclick="danji(4,19)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="380" y="440" onclick="danji(4,20)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="400" y="440" onclick="danji(4,21)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="420" y="440" onclick="danji(4,22)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="440" y="440" onclick="danji(4,23)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="460" y="440" onclick="danji(4,24)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="480" y="440" onclick="danji(4,25)" style="fill:#0000ff00"/>
+				</g>
+				<g>
+					<rect width="20" height="40" x="  0" y="580" onclick="danji(5, 1)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 20" y="580" onclick="danji(5, 2)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 40" y="580" onclick="danji(5, 3)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 60" y="580" onclick="danji(5, 4)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 80" y="580" onclick="danji(5, 5)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="100" y="580" onclick="danji(5, 6)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="120" y="580" onclick="danji(5, 7)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="140" y="580" onclick="danji(5, 8)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="160" y="580" onclick="danji(5, 9)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="180" y="580" onclick="danji(5,10)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="200" y="580" onclick="danji(5,11)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="220" y="580" onclick="danji(5,12)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="240" y="580" onclick="danji(5,13)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="260" y="580" onclick="danji(5,14)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="280" y="580" onclick="danji(5,15)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="300" y="580" onclick="danji(5,16)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="320" y="580" onclick="danji(5,17)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="340" y="580" onclick="danji(5,18)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="360" y="580" onclick="danji(5,19)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="380" y="580" onclick="danji(5,20)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="400" y="580" onclick="danji(5,21)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="420" y="580" onclick="danji(5,22)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="440" y="580" onclick="danji(5,23)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="460" y="580" onclick="danji(5,24)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="480" y="580" onclick="danji(5,25)" style="fill:#0000ff00"/>
+				</g>
+				<g>
+					<rect width="20" height="40" x="  0" y="720" onclick="danji(6, 1)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 20" y="720" onclick="danji(6, 2)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 40" y="720" onclick="danji(6, 3)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 60" y="720" onclick="danji(6, 4)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 80" y="720" onclick="danji(6, 5)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="100" y="720" onclick="danji(6, 6)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="120" y="720" onclick="danji(6, 7)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="140" y="720" onclick="danji(6, 8)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="160" y="720" onclick="danji(6, 9)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="180" y="720" onclick="danji(6,10)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="200" y="720" onclick="danji(6,11)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="220" y="720" onclick="danji(6,12)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="240" y="720" onclick="danji(6,13)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="260" y="720" onclick="danji(6,14)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="280" y="720" onclick="danji(6,15)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="300" y="720" onclick="danji(6,16)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="320" y="720" onclick="danji(6,17)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="340" y="720" onclick="danji(6,18)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="360" y="720" onclick="danji(6,19)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="380" y="720" onclick="danji(6,20)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="400" y="720" onclick="danji(6,21)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="420" y="720" onclick="danji(6,22)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="440" y="720" onclick="danji(6,23)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="460" y="720" onclick="danji(6,24)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="480" y="720" onclick="danji(6,25)" style="fill:#0000ff00"/>
+				</g>
+				<g>
+					<rect width="20" height="40" x="  0" y="860" onclick="danji(7, 1)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 20" y="860" onclick="danji(7, 2)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 40" y="860" onclick="danji(7, 3)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 60" y="860" onclick="danji(7, 4)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x=" 80" y="860" onclick="danji(7, 5)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="100" y="860" onclick="danji(7, 6)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="120" y="860" onclick="danji(7, 7)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="140" y="860" onclick="danji(7, 8)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="160" y="860" onclick="danji(7, 9)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="180" y="860" onclick="danji(7,10)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="200" y="860" onclick="danji(7,11)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="220" y="860" onclick="danji(7,12)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="240" y="860" onclick="danji(7,13)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="260" y="860" onclick="danji(7,14)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="280" y="860" onclick="danji(7,15)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="300" y="860" onclick="danji(7,16)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="320" y="860" onclick="danji(7,17)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="340" y="860" onclick="danji(7,18)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="360" y="860" onclick="danji(7,19)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="380" y="860" onclick="danji(7,20)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="400" y="860" onclick="danji(7,21)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="420" y="860" onclick="danji(7,22)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="440" y="860" onclick="danji(7,23)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="460" y="860" onclick="danji(7,24)" style="fill:#0000ff00"/>
+					<rect width="20" height="40" x="480" y="860" onclick="danji(7,25)" style="fill:#0000ff00"/>
+				</g>
+
+
+			</svg>
+	</div>
+	<div id="app">
+		<el-container>
+			<el-header style="position: fixed;padding:0;width:100%;height: 40px;z-index: 20;">
+				<el-button-group style="width: 100%;">
+					<el-button type="primary" icon="el-icon-caret-left" style="width: 20%;" onclick="fanye(-1)"></el-button>
+					<el-button type="primary" icon="el-icon-date" style="width: 60%;">中心科排班表</el-button>
+					<el-button type="primary" icon="el-icon-caret-right" style="width: 20%;" onclick="fanye(1)"></el-button>
+				</el-button-group>
+			</el-header>
+			<!--<el-main>Main</el-main>-->
+		</el-container>
+	</div>
+</body>
+<script src="./js/jquery-3.6.0.js"></script>
+<!-- 先引入 Vue -->
+<script src="./js/vue.js"></script>
+<!-- 先引入 SVGjs -->
+<script src="./js/svg.js/svg.js"></script>
+<!-- 引入 万年历 -->
+<script src="js/rili/calendar.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<script>
+	// var shouri = "2021,08,07"
+	var shouri = "2019,03,16"
+	var draw = SVG("#riqi");
+	var bg = SVG("#bg");
+	var riqi = [];
+	var biao = [];
+
+
+	for(;;){
+		var date1 = new Date(shouri);
+		var date2 = new Date(date1);
+		date2.setDate(date1.getDate() + 25*7);
+		var jin = new Date();
+		if(tab(date2,jin)){
+			break;
+		}
+		page(1)
+	}
+
+	huizhi(shouri);
+	jintian(shouri);
+
+
+	/**
+	 * 点击单页翻页函数
+	 * */
+	 function fanye(r){
+	 	page(r);
+	 	draw.clear();
+	 	huizhi(shouri);
+		jintian(shouri);
+	 }
+
+
+	/**
+	 * 翻页操作获取首项日期
+	 * 输入：翻页页数，可为负数（向前翻），正数（向后翻）
+	 */
+	function page(r) {
+		// console.log(r)
+		var date1 = new Date(shouri)
+		var date2 = new Date(date1);
+		date2.setDate(date1.getDate() + (r * 25 * 7));
+		if(tab(date2,"2018,05,20")){
+			shouri = date2
+		}
+	}
+
+
+	/**
+	 * 对比两个时间的先后
+	 */
+	function tab(date1, date2) {
+		var oDate1 = new Date(date1);
+		var oDate2 = new Date(date2);
+		if(oDate1.getTime() > oDate2.getTime()) {
+			return true;//第一个时间大（靠后）
+		} else {
+			return false;
+		}
+	}
+
+
+	/**
+	 * 绘制函数
+	 */
+	function huizhi(shouri){
+		for(var i=1;i<=7;i++){
+			// riqi[i] = text("a").rect(100, 20).attr({ fill: '#f06' }).x(0).y(140*(i-1)+40)
+			for(var o=1;o<=25;o++){
+				riqi[i] = draw.text(danri(shouri,i,o)).attr({ fill: '#f06'}).x(20*(o-1)+10).y(140*(i-1)+40-2.5).font({
+					family:'Helvetica',
+					size:12,
+					anchor:'middle',
+					// leading:'1.5em'
+				});
+			}
+		}
+	}
+
+
+	/**
+	 * 绘制背景
+	*/
+	var bgm = 0;
+	var bgn = 0;
+	function danji(m,n){
+		// console.log("第"+m+"行"+n+"列")
+		bg.clear();
+		if(bgm!=m||bgn!=n){
+			bg.rect(20, 80).attr({ fill: '#ffff0066' }).x(20*(n-1)).y(140*(m-1)+20).radius(5);
+			bgm = m;
+			bgn = n;
+		}else{
+			bgm = 0;
+			bgn = 0;
+		}
+	}
+
+	/**
+	 * 获取当日位置
+	 */
+	function jintian(shouri){
+
+		var endTime = parseInt(new Date().getTime() / 1000) - new Date(shouri).getTime() / 1000;
+        var timeDay = parseInt(endTime / 60 / 60 / 24);        //相差天数
+        var jinh = new Date().getHours();//获取当前时
+        if(timeDay>=0 && timeDay<175){
+        	var m = parseInt(timeDay/25);
+        	var n = timeDay%25;
+			draw.rect(20, 80).attr({ fill: '#ff000066' }).x(20*n).y(140*m+20).radius(5);
+			draw.rect(20, 10).attr({ fill: '#ffeb3b', }).x(20*n).y(140*m+12).radius(2);
+			draw.text("今天").attr({ fill: '#f06' }).x(20*n+9).y(140*m+3).font({
+				family:'楷体',
+				size:10,
+				anchor:'middle',
+			});
+			if(jinh<9){
+				// 前一天夜班
+				if(n==0){
+					draw.rect(20, 20).attr({ fill: '#262cf3e0' }).x(480).y(140*(m-1)+80).radius(5);
+				}else{
+					draw.rect(20, 20).attr({ fill: '#262cf3e0' }).x(20*(n-1)).y(140*m+80).radius(5);
+				}
+			}else if(jinh<20){
+				// 今天白班
+				draw.rect(20, 20).attr({ fill: '#262cf3e0' }).x(20*n).y(140*m+60).radius(5);
+			}else{
+				// 今天夜班
+				draw.rect(20, 20).attr({ fill: '#262cf3e0' }).x(20*n).y(140*m+80).radius(5);
+			}
+        }else if(timeDay==175 && jinh<9){
+        	draw.rect(20, 20).attr({ fill: '#262cf3e0' }).x(480).y(920).radius(5);
+        }
+	}
+
+	/**
+	 * 获取日期对应节日 
+	 */
+	function jiaqi(yy,mm,dd){
+
+		var jieri_yang = [
+			[1,1,'元旦'],
+			[3,12,'植树节'],
+			[4,1,'愚人节'],
+			[5,1,'劳动节'],
+			[5,4,'青年节'],
+			[6,1,'儿童节'],
+			[7,1,'建党节'],
+			[8,1,'建军节'],
+			[10,1,'国庆节']
+		]
+		var jieri_yin = [
+			[1,1,'春节'],
+			[1,15,'元宵节'],
+			[2,2,'龙抬头'],
+			[5,5,'端午节'],
+			[7,7,'七夕'],
+			[7,15,'中元节'],
+			[8,15,'中秋节'],
+			[9,9,'重阳节'],
+			[10,1,'寒衣节'],
+			[10,15,'下元节'],
+			[12,23,'小年']
+		]
+		jieri = calendarFormatter.solar2lunar(yy, mm, dd);
+		for(var i=0;i<jieri_yang.length;i++){
+			if(mm==jieri_yang[i][0] && dd==jieri_yang[i][1]){
+				jieri.isTerm = true
+				jieri.Term = jieri_yang[i][2]
+			}
+		}
+		for(var i=0;i<jieri_yin.length;i++){
+			if(jieri.lMonth==jieri_yin[i][0] && jieri.lDay==jieri_yin[i][1]){
+				jieri.isTerm = true
+				jieri.Term = jieri_yin[i][2]
+			}
+		}
+
+		if((jieri.lMonth==12 && (jieri.lDay==29 || jieri.lDay==30))||(jieri.cMonth==4 && (jieri.cDay==3 || jieri.cDay==4 || jieri.cDay==5))){
+			
+			var nd = new Date(yy+'.'+mm+'.'+dd);  
+			nd.setDate(nd.getDate()+1);//获取AddDayCount天后的日期 
+
+			var y = nd.getFullYear();   
+			var m = (nd.getMonth()+1)<10?"0"+(nd.getMonth()+1):(nd.getMonth()+1);//获取当前月份的日期，不足10补0  
+			var d = nd.getDate()<10?"0"+nd.getDate():nd.getDate();//获取当前几号，不足10补0
+			
+			var xn = calendarFormatter.solar2lunar(y, m, d);
+			if(xn.lMonth==1 && xn.lDay==1){
+				jieri.isTerm = true
+				jieri.Term = '除夕'
+			}else if(xn.isTerm){
+				if(xn.Term == "清明"){
+					jieri.isTerm = true
+					jieri.Term = '寒食节'
+				}
+			}
+		}
+		return jieri
+	}
+
+
+	function danri(shouri,m,n){
+		var date1 = new Date(shouri);
+		var date2 = new Date(date1);
+		date2.setDate(date1.getDate() + 25*(m-1)+n-1);
+
+
+		var jie = jiaqi(date2.getFullYear(),date2.getMonth()+1,date2.getDate())
+
+		// 年份月份
+		if(date2.getDate()==1){
+			draw.rect(20, 80).attr({ fill: '#00ff0066' }).x(20*(n-1)).y(140*(m-1)+20).radius(5);
+			draw.rect(52, 10).attr({ fill: '#009DEA99', }).x(n==1?-5:n==25?452:20*(n-1)-15).y(140*(m-1)+12).radius(2);
+			yue = date2.getFullYear()+"年"+(date2.getMonth()+1)+"月";
+			draw.text(yue).attr({ fill: '#f06' }).x(n==1?23:n==25?477:20*(n-1)+12).y(140*(m-1)+3).font({
+				family:'楷体',
+				size:10,
+				anchor:'middle',
+			});
+		}
+
+		// 节气假日
+		if(jie.Term){
+			draw.rect(30, 10).attr({ fill: '#3bf6ff77', }).x(n==1? 0:n==25?470:20*(n-1)-3).y(140*(m-1)+2);
+			draw.rect(2, 10).attr({ fill: '#3bf6ff77', }).x(20*(n-1)+10).y(140*(m-1)+12).radius(1);
+			draw.text(jie.Term).attr({ fill: '#e900ffb0' }).x(n==1?15:n==25?485:20*(n-1)+12).y(140*(m-1)-7).font({
+				family:'楷体',
+				size:10,
+				anchor:'middle',
+			});
+		}
+
+		var danri = date2.getDate().toString();
+		return danri;
+	}
+
+
+</script>
+
+<script>
+	var ban = 0;
+	function huanse(i) {
+		$('.paise').removeClass("paise");
+		$('.zise').removeClass("zise");
+		$('.secse').removeClass("secse");
+		if(i!=ban){
+			$(".pai" + i).addClass('paise');
+			$(".xiu"+i).addClass('secse');
+			$(".zi"+i).addClass('zise');
+			ban = i;
+		}else{
+			ban = 0;
+		}
+		
+	}
+</script>
+
+<script type="text/javascript">
+	
+	new Vue({
+		el: '#app',
+		data: function(){
+			return {
+				a:'a'
+			}
+		}
+	})
+
+</script>
+
+</html>
